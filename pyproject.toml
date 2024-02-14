@@ -1,0 +1,44 @@
+[project]
+name = "ml-compe"
+version = "0.1.0"
+description = "Add your description here"
+authors = [
+    { name = "Yuki Nakata", email = "yuki.nakata@vitalize.co.jp" }
+]
+dependencies = [
+    "numpy==1.26.4",
+    "pandas==2.2.0",
+    "scipy==1.12.0",
+    "matplotlib==3.8.2",
+    "scikit-learn==1.4.0",
+    "lightgbm==4.3.0",
+    "xgboost==2.0.3",
+    "tensorflow==2.15.0",
+    "torch==2.2.0",
+    "nltk>=3.8.1",
+    "wordcloud>=1.9.3",
+    "gensim>=4.3.2",
+]
+readme = "README.md"
+requires-python = ">= 3.9"
+
+[project.scripts]
+hello = "ml_compe:hello"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.rye]
+managed = true
+dev-dependencies = [
+    "jupyterlab==4.1.1",
+    "notebook==7.1.0",
+    "seaborn==0.13.2",
+]
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/ml_compe"]
